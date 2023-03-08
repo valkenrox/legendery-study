@@ -1,7 +1,7 @@
 """
-Calculo do primeiro dígito do CPF
-CPF: 746.824.890-70
-Colete a soma dos 9 primeiros dígitos do CPF
+Calculo do primeiro dígito do cpf_enviado
+cpf_enviado: 746.824.890-70
+Colete a soma dos 9 primeiros dígitos do cpf_enviado
 multiplicando cada um dos valores por uma
 contagem regressiva começando de 10
 Ex.:  746.824.890-70 (746824890)
@@ -18,13 +18,16 @@ Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
-O primeiro dígito do CPF é 7
+O primeiro dígito do cpf_enviado é 7
 """
-cpf = '178780977'
-nove_digitos = cpf[:9]
+cpf_enviado_usuario = '17858097739'
+nove_digitos = cpf_enviado_usuario[:9]
 contador_regressivo_1 = int(10)
 resultado = []
 calculo_primeiro_digito = 0
+if '.' or '-' in cpf_enviado_usuario:
+    cpf_enviado_usuario.replace('.','').replace('-','')
+
 
 for digito in nove_digitos: #percorre cada digito até a posição 8 da str
     print(f'Seu digito {digito}, contador {int(contador_regressivo_1)}\n')
@@ -49,11 +52,11 @@ if resto_div_primeiro_digito > 9: #condicional para saber se o resultado do rest
 else: #else da condição atribuindo o resto da divisão ao valor do primeiro digito
     primeiro_digito = resto_div_primeiro_digito
 
-print(f'O primeiro digito do seu CPF {cpf[:9]} é {primeiro_digito}')
+print(f'O primeiro digito do seu cpf_enviado {[nove_digitos]} é {primeiro_digito}')
 """
-Calculo do segundo dígito do CPF
-CPF: 746.824.890-70
-Colete a soma dos 9 primeiros dígitos do CPF,
+Calculo do segundo dígito do cpf_enviado
+cpf_enviado: 746.824.890-70
+Colete a soma dos 9 primeiros dígitos do cpf_enviado,
 MAIS O PRIMEIRO DIGITO,
 multiplicando cada um dos valores por uma
 contagem regressiva começando de 11
@@ -71,9 +74,9 @@ Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
-O segundo dígito do CPF é 0
+O segundo dígito do cpf_enviado é 0
 """
-cpf = cpf[:9] + str(primeiro_digito)
+cpf = nove_digitos + str(primeiro_digito)
 
 contador_regressivo_2 = 11
 resultado_segundo_digito = 0
@@ -89,4 +92,11 @@ for digito2 in cpf:
     contador_regressivo_2 -= 1
 print(f'O segundo Digito é: {resultado_segundo_digito}')
 cpf = cpf[:9] + str(primeiro_digito) + str(resultado_segundo_digito)
-print(f'Seu CPF é {cpf[:9]} + {primeiro_digito} + {resultado_segundo_digito}; sendo assim seu CPF é {cpf} ')
+print(f'Seu cpf_enviado é {nove_digitos} + {primeiro_digito} + {resultado_segundo_digito}; sendo assim seu cpf_enviado é {cpf} ')
+
+
+
+if cpf == cpf_enviado_usuario:
+    print("CPF Válido")
+else:
+    print("CPF Inválido")
