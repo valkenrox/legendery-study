@@ -14,4 +14,4 @@ linha2 = '{0}{1} tem {2} de altura, \npesa {3} KGs e \n seu IMC é {4:.2f} '.for
 print(linha)
 print(linha2)
 
-#C:\Users\soloq\Desktop\Curso Python\Anotações Aula\inicio\exercicios
+#C:\Users\soloq\Desktop\Curso Python\Anotações Aula\inicio\py
