@@ -66,3 +66,6 @@ else:
     print(pessoa['sobrenome'])
 
 # print('ISSO Não vai')
+
+
+pessoa.get('tags').append('Programador')
