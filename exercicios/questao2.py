@@ -14,7 +14,10 @@ entrada.pack()
 
 botao = tk.Button(janela, text="Clique para me dar um ponto")
 botao.pack()
-
+resultado = entrada.get()
+lbl = tk.Label(janela,text=resultado)
+lbl.configure(text= resultado)
+lbl.pack()
 
 check = tk.Checkbutton(janela, text="Clique para me dar outro ponto")
 check.pack()
