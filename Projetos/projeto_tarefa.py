@@ -73,6 +73,9 @@ while True:
 
 
 
+#criar array com dez valores, usando carros e componentes
+carros = ["Gol","Palio","Uno","Celta","Sandero","Onix"]
+componentes = ["Motor","Pneu","Porta","Vidro","Banco","Retrovisor"]
 
 
 
