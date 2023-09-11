@@ -1,0 +1,31 @@
+Patch(
+    DB_Funcao_Bloqueio; 
+    Defaults(DB_Funcao_Bloqueio);
+    {             
+        Setor: ComboBox_sector_bloqueio.Selected.Value;
+        DataFabricacao: DatePickerFabricacao.SelectedDate;   
+        DataBloqueio: DatePickerBloqueio.SelectedDate;
+        Motivo: TextInput_Motivo_bloqueio.Text;
+        Produto: ComboBox_products_bloqueio.Selected.Produtos;
+        Criterio: ComboBox_Criterio_Bloqueio.Selected.Criterios;        
+        NmrCaixa: TextInput_BSM.Text;
+        Local: TextInput_Local.Text;
+        ResponsavelBLoqueio: {Claims: Concatenate(
+                                    "i:0#.f|membership|";
+                                    DataCardValueBloqueio.Selected.Mail);
+                                       DisplayName: DataCardValueBloqueio.Selected.DisplayName;
+                                        Email: DataCardValueBloqueio.Selected.Mail;
+                                        Department:DataCardValueBloqueio.Selected.Department;
+                                          JobTitle:DataCardValueBloqueio.Selected.JobTitle;
+                                          Picture:""};
+        ResponsavelVerificacao: {Claims: Concatenate(
+                                    "i:0#.f|membership|";
+                                    DataCardValueRespVerifBloqueio.Selected.Mail);
+                                       DisplayName: DataCardValueRespVerifBloqueio.Selected.DisplayName;
+                                        Email: DataCardValueRespVerifBloqueio.Selected.Mail;
+                                        Department:DataCardValueRespVerifBloqueio.Selected.Department;
+                                          JobTitle:DataCardValueRespVerifBloqueio.Selected.JobTitle;
+                                          Picture:""}/*;        
+        Anexos: DataCardValue_AnexoBloqueio.Attachments */
+    }
+)
