@@ -37,4 +37,4 @@ score=accuracy_score(y_test,y_pred)
 print(f'Accuracy: {round(score*100,2)}%')
 
 #DataFlair - constrói a matriz de confusão
-confusion_matrix(y_test,y_pred, labels=['FAKE','REAL'])
+print(confusion_matrix(y_test,y_pred, labels=['FAKE','REAL']))
