@@ -9,6 +9,7 @@
 # refazer = todo ['fazer café']
 # refazer = todo ['fazer café', 'caminhar']
 import os
+import json
 
 tarefas = []
 tarefa_refazer = []
@@ -54,7 +55,6 @@ def desfazer(tarefas, tarefa_refazer):
         tarefa_refazer.append(tarefa)
         print(f'{tarefa} desfeita')
         print()
-        
 
     
     
