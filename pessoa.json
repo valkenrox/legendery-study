@@ -1,0 +1,22 @@
+{
+  "nome": "Jo\u00e3o",
+  "idade": 39,
+  "email": "daniel-paulo.silva@1111.com",
+  "telefone": "1111-1111",
+  "endereco": "Rua 1, 11",
+  "cidade": "S\u00e3o Paulo",
+  "estado": "SP",
+  "numeros preferidos": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "programador": true,
+  "linguagens": [
+    "Python",
+    "PowerFX",
+    "C++"
+  ]
+}
