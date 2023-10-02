@@ -10,56 +10,9 @@
 # refazer = todo ['fazer café', 'caminhar']
 import os
 import json
+import exercicio26_2 as ex26_2
 
-tarefas = []
-tarefa_refazer = []
-
-
-
-def listar(tarefas):
-    print()
-    if not tarefas:
-        print("Não há tarefas para listar\n")
-    else:
-        for tarefa in tarefas:
-            print(f'{tarefa}')
-        
-
-
-def criarTarefa(tarefa):
-    print()
-    tarefas.append(tarefa)
-    print(f'{tarefa} adicionada na lista')
-    print()
-
-
-
-
-            
-def refazer(tarefas, tarefa_refazer):
-    print()
-    if not tarefa_refazer:
-        print("Nenhuma tarefa para refazer")
-    tarefa = tarefa_refazer.pop()
-
-    tarefas.append(tarefa)
-    print(f'{tarefa} tarefa adicionada novamente')
-    print()
-
-
-def desfazer(tarefas, tarefa_refazer):
-        print()
-        if not tarefas:
-            print("Sem tarefas para desfazer")
-        tarefa = tarefas.pop()
-        tarefa_refazer.append(tarefa)
-        print(f'{tarefa} desfeita')
-        print()
-
-    
-    
-
-
+tarefa_refazer = ex26_2.tarefa_refazer
 
 
 
@@ -70,28 +23,35 @@ while True:
     decisa = input("Funções disponíveis listar, refazer, desfazer: \n")
     decisa.lower()
 
+    with open('tarefas.json', 'r') as arquivo:
+        tarefas = json.load(arquivo)
+
 
     if decisa == "listar":
-        listar(tarefas)
+        ex26_2.listar(tarefas)
         continue
     elif decisa == "desfazer":
-        desfazer(tarefas, tarefa_refazer)
-        listar(tarefas)
+        ex26_2.desfazer(tarefas, tarefa_refazer)
+        ex26_2.listar(tarefas)
         print()
         continue
     elif decisa == "refazer":
         print()
-        refazer(tarefas, tarefa_refazer)
+        ex26_2.refazer(tarefas, tarefa_refazer)
         
-        listar(tarefas)
+        ex26_2.listar(tarefas)
         print()
         continue
     elif decisa == "clear":
         os.system('clear')
+    elif decisa == "salvar":
+        ex26_2.salvarJson(tarefas)
+        print()
+        continue
     else:
         print()
-        criarTarefa(decisa)
-        listar(tarefas)
+        ex26_2.criarTarefa(decisa)
+        ex26_2.listar(tarefas)
         print()
         continue
 
