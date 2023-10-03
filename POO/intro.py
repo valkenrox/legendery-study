@@ -38,6 +38,7 @@ print(pessoa1.peso)
 
 
 pessoa1.andar()
+pessoa1.comer()
 
 
 
