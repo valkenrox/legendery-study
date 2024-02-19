@@ -47,6 +47,6 @@ class MainStream(QMainWindow):
         self.UrlBar.setText(p.toString())  # Corrigido para usar toString() em vez de str()
 
 Application = QApplication(sys.argv)
-QApplication.setApplicationName('web browser by- DataFlair')
+QApplication.setApplicationName('web browser by- valkenrox')
 Window = MainStream()
 Application.exec_()
